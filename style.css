@@ -629,11 +629,12 @@ cursor: pointer;
     }
 
     .music-player {
-        bottom: 12px;
-        width: 92%;
-        padding: 12px 14px;
-        border-radius: 20px;
-    }
+    bottom: 18px;
+    width: 92%;
+    padding: 10px 12px 12px;
+    border-radius: 18px;
+    box-sizing: border-box;
+}
 
     .song-cover {
         width: 45px;
@@ -655,8 +656,8 @@ cursor: pointer;
     width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 14px;
-    margin-top: 10px;
+    gap: 10px;
+    margin-top: 6px;
     visibility: visible !important;
     opacity: 1 !important;
 }
@@ -665,9 +666,9 @@ cursor: pointer;
     }
 
     .controls .play-btn {
-    width: 44px;
-    height: 44px;
-    font-size: 19px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
 }
 }
 #audioPlayer {
