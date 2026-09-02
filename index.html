@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hanuman Bhakti</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <!-- Blurred background used only to fill empty screen space -->
+        <div class="background-fill"></div>
+
+        <!-- Full Hanuman image -->
+        <img
+            src="hanuman-bg.png"
+            class="hanuman-background"
+            alt="Lord Hanuman"
+        >
+
+        <!-- Slight dark overlay so text is readable -->
+        <div class="overlay"></div>
+
+
+        <section class="content">
+
+            <div class="title-area">
+
+                <h1>हनुमान भक्ति</h1>
+
+                <div class="divider">
+                    <span></span>
+                    <span class="flag">🚩</span>
+                    <span></span>
+                </div>
+
+                <p>
+                    शक्ति
+                    <span>•</span>
+                    भक्ति
+                    <span>•</span>
+                    शांति
+                </p>
+
+            </div>
+
+
+            <div class="music-player">
+
+                <div class="song-info">
+
+                    <div class="song-cover">
+                        🚩
+                    </div>
+
+                    <div class="song-text">
+
+                        <h2 id="songTitle">
+                            Hanuman Aavahan
+                        </h2>
+
+                        <p>Hanuman Bhakti</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="progress-area">
+
+                    <div class="progress-bar">
+                        <div id="progressFill"></div>
+                    </div>
+
+                    <div class="time">
+
+                        <span id="currentTime">
+                            0:00
+                        </span>
+
+                        <span id="duration">
+                            --:--
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="controls">
+
+                    <button
+                        id="shuffleBtn"
+                        title="Shuffle"
+                    >
+                        🔀
+                    </button>
+
+                    <button
+                        id="prevBtn"
+                        title="Previous"
+                    >
+                        ⏮
+                    </button>
+
+                    <button
+                        id="playBtn"
+                        class="play-btn"
+                        title="Play"
+                    >
+                        ▶
+                    </button>
+
+                    <button
+                        id="nextBtn"
+                        title="Next"
+                    >
+                        ⏭
+                    </button>
+
+                    <button
+                        id="repeatBtn"
+                        title="Repeat"
+                    >
+                        🔁
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+<audio id="audioPlayer" preload="metadata"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

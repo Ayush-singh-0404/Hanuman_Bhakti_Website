@@ -1,0 +1,675 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+}
+
+
+body {
+
+    overflow: hidden;
+
+    font-family:
+        Arial,
+        "Noto Sans Devanagari",
+        sans-serif;
+
+    background: #06120e;
+
+}
+
+
+/* =========================
+   FULL SCREEN
+========================= */
+
+.page {
+
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #06120e;
+
+}
+
+
+/* =========================
+   BACKGROUND FILL
+
+   This fills the sides of the screen.
+========================= */
+
+.background-fill {
+
+display: none;
+
+}
+
+
+/* =========================
+   ACTUAL FULL IMAGE
+
+   object-fit: contain means:
+   NOTHING gets cropped.
+========================= */
+
+.hanuman-background {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   DARK OVERLAY
+========================= */
+
+.overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+
+            to bottom,
+
+            rgba(0, 0, 0, 0.05) 0%,
+
+            rgba(0, 0, 0, 0.05) 55%,
+
+            rgba(0, 0, 0, 0.45) 100%
+
+        );
+
+    z-index: 2;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================
+   PAGE CONTENT
+========================= */
+
+.content {
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 3;
+
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title-area {
+    position: absolute;
+
+    left: 6%;
+    top: 10%;
+
+    transform: none;
+
+    width: auto;
+
+    text-align: left;
+}
+
+
+.title-area h1 {
+    color: white;
+
+    font-size: clamp(42px, 4.5vw, 70px);
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.85),
+        0 0 32px rgba(255, 170, 40, 0.18);
+}
+
+
+/* =========================
+   DECORATIVE DIVIDER
+========================= */
+
+.divider {
+
+    margin-top: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 12px;
+
+}
+
+
+.divider span:not(.flag) {
+
+    width: 70px;
+
+    height: 1px;
+
+    background:
+        rgba(
+            255,
+            190,
+            70,
+            0.85
+        );
+
+}
+
+
+.flag {
+
+    font-size: 17px;
+
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.title-area p {
+
+    margin-top: 9px;
+
+    color: #fff1d7;
+
+    font-size:
+        clamp(
+            16px,
+            1.5vw,
+            23px
+        );
+
+    font-weight: 500;
+
+    text-shadow:
+        0 3px 12px
+        rgba(0, 0, 0, 0.9);
+
+}
+
+
+.title-area p span {
+
+    margin:
+        0 14px;
+
+    color:
+        #ffc45e;
+
+}
+
+
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+.music-player {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 24px;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        min(
+            620px,
+            88vw
+        );
+
+    padding:
+        15px 20px
+        13px;
+
+    border-radius:
+        22px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(
+                40,
+                20,
+                11,
+                0.87
+            ),
+
+            rgba(
+                74,
+                29,
+                17,
+                0.82
+            )
+
+        );
+
+    border:
+
+        1px solid
+        rgba(
+            255,
+            199,
+            115,
+            0.27
+        );
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+
+        0 18px 55px
+        rgba(
+            0,
+            0,
+            0,
+            0.5
+        );
+
+}
+
+
+/* =========================
+   SONG INFORMATION
+========================= */
+
+.song-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.song-cover {
+
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 24px;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            #ff8b20,
+
+            #d92f13
+
+        );
+
+    box-shadow:
+
+        0 5px 18px
+        rgba(
+            255,
+            82,
+            0,
+            0.28
+        );
+
+}
+
+
+.song-text {
+
+    min-width: 0;
+
+}
+
+
+.song-text h2 {
+
+    color: white;
+
+    font-size: 17px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.song-text p {
+
+    margin-top: 2px;
+
+    color: #d3b9aa;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-area {
+
+    margin-top: 10px;
+
+}
+
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 4px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.18
+        );
+cursor: pointer;
+}
+
+
+#progressFill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #ff6a00,
+
+            #ffc044
+
+        );
+
+}
+
+
+.time {
+
+    margin-top: 4px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.72
+        );
+
+    font-size: 10px;
+
+}
+
+
+/* =========================
+   PLAYER CONTROLS
+========================= */
+
+.controls {
+
+    margin-top: 4px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.controls button {
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+
+}
+
+
+.controls button:hover {
+
+    transform:
+        scale(1.12);
+
+    opacity: 0.85;
+
+}
+
+
+/* =========================
+   PLAY BUTTON
+========================= */
+
+.controls .play-btn {
+
+    width: 51px;
+    height: 51px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 21px;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            #ff7717,
+
+            #ef3215
+
+        );
+
+    box-shadow:
+
+        0 0 24px
+        rgba(
+            255,
+            90,
+            20,
+            0.42
+        );
+
+}
+
+
+.controls .play-btn:hover {
+
+    transform:
+        scale(1.08);
+
+    opacity: 1;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .hanuman-background {
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .title-area {
+        left: 5%;
+        top: 8%;
+        width: 90%;
+    }
+
+    .title-area h1 {
+        font-size: 38px;
+        line-height: 1.05;
+    }
+
+    .divider {
+        margin-top: 10px;
+        gap: 8px;
+    }
+
+    .divider span:not(.flag) {
+        width: 48px;
+    }
+
+    .flag {
+        font-size: 14px;
+    }
+
+    .title-area p {
+        margin-top: 7px;
+        font-size: 13px;
+    }
+
+    .title-area p span {
+        margin: 0 6px;
+    }
+
+    .music-player {
+        bottom: 12px;
+        width: 92%;
+        padding: 12px 14px;
+        border-radius: 20px;
+    }
+
+    .song-cover {
+        width: 45px;
+        height: 45px;
+        font-size: 21px;
+    }
+
+    .song-text h2 {
+        font-size: 15px;
+    }
+
+    .song-text p {
+        font-size: 11px;
+    }
+
+    .controls {
+        gap: 14px;
+    }
+
+    .controls button {
+        font-size: 15px;
+    }
+
+    .controls .play-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+}
+#audioPlayer {
+    display: none;
+}
+#shuffleBtn.active,
+#repeatBtn.active {
+    background: rgba(255, 153, 0, 0.25);
+    color: #ffb347;
+    box-shadow: 0 0 12px rgba(255, 153, 0, 0.7);
+    transform: scale(1.08);
+}
