@@ -112,6 +112,22 @@ function loadSong(index) {
     durationText.textContent = "0:00";
 
 }
+audio.addEventListener("error", () => {
+
+    console.error(
+        "Audio failed to load:",
+        songs[currentSongIndex].file
+    );
+
+    // Move to the next song
+    currentSongIndex =
+        (currentSongIndex + 1) % songs.length;
+
+    loadSong(currentSongIndex);
+
+    audio.play().catch(() => {});
+
+});
 
 
 // ===============================
